@@ -1,4 +1,4 @@
-package com.cafealyzer.cafealyzer.ui.component.homepage
+package com.cafealyzer.cafealyzer.ui.component.topcafescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -36,20 +36,22 @@ fun CafeItem(
     modifier: Modifier = Modifier,
 ) {
     Card(
-        modifier = modifier.width(140.dp),
+        modifier = modifier
+            .width(140.dp)
+            .height(200.dp),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.background
+            containerColor = MaterialTheme.colorScheme.primary
         )
     ) {
         Column {
             Image(
                 painter = rememberAsyncImagePainter(
                     ImageRequest.Builder(LocalContext.current).data(
-                            data = cafe.image
-                        ).apply(block = fun ImageRequest.Builder.() {
-                            crossfade(true)
-                        }).build()
+                        data = cafe.image
+                    ).apply(block = fun ImageRequest.Builder.() {
+                        crossfade(true)
+                    }).build()
                 ),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
@@ -67,7 +69,9 @@ fun CafeItem(
                         fontWeight = FontWeight.ExtraBold
                     ),
                 )
-                Row {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
                     Icon(
                         imageVector = Icons.Default.Star,
                         contentDescription = null,

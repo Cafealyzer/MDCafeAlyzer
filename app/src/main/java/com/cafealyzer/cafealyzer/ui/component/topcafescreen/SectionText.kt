@@ -1,4 +1,4 @@
-package com.cafealyzer.cafealyzer.ui.component.homepage
+package com.cafealyzer.cafealyzer.ui.component.topcafescreen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -14,8 +14,11 @@ fun SectionText(
     modifier: Modifier = Modifier,
 ) {
     Text(
-        text = title, style = MaterialTheme.typography.headlineSmall.copy(
+        text = title,
+        color = MaterialTheme.colorScheme.onSurface,
+        style = MaterialTheme.typography.headlineSmall.copy(
             fontWeight = FontWeight.ExtraBold
-        ), modifier = modifier.padding(horizontal = 8.dp, vertical = 8.dp)
+        ),
+        modifier = modifier.padding(horizontal = 8.dp, vertical = 8.dp)
     )
 }
